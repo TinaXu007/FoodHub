@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="isLast"
+            type="Boolean" />
+
+        <variable
+            name="listener"
+            type="com.wacmob.foodhub.view.listener.MyOrdersListItemClickListener" />
+
+        <variable
+            name="item"
+            type="com.wacmob.foodhub.data.models.MyordersItemModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="@{()->listener.click(item)}"
+        app:cardBackgroundColor="@color/colorWhite"
+        app:cardElevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_visible"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/view_visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circleImageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="17dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@drawable/login_image"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/view_visible" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_item_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@{item.itemname}"
+                    android:textColor="@color/my_orders_item_text_color"
+                    app:customFontThickness="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+                    tools:text="@string/chicken_biriyani"
+                    app:layout_constraintStart_toEndOf="@+id/circleImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_hub_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@{item.restName}"
+                    android:textColor="@color/my_orders_hub_text_color"
+                    android:textSize="12sp"
+                    app:customFontThickness="bold"
+                    app:layout_constraintEnd_toStartOf="@+id/ratingBar"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_item_name"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_item_name"
+                    tools:text="@string/hub_name" />
+
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@{item.rate}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp"
+                    tools:text="56"
+                    app:customFontThickness="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+                    app:layout_constraintStart_toStartOf="@+id/circleImageView"
+                    app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:theme="@style/RatingBar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_status"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="11dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingStart="14sp"
+                    android:paddingTop="9dp"
+                    android:paddingEnd="14sp"
+                    android:paddingBottom="9dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:customFontThickness="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/ratingBar"
+                    app:layout_constraintStart_toStartOf="@+id/ratingBar"
+                    app:layout_constraintTop_toBottomOf="@+id/ratingBar"
+                    tools:text="Pending" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout_visible">
+
+                <ImageView
+                    android:id="@+id/imageView_source_loc"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/ic_location_gray"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_view_rest_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/hub_name"
+                    android:textColor="@color/my_orders_hub_name_text_color"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView_source_loc"
+                    app:layout_constraintTop_toTopOf="@+id/imageView_source_loc" />
+
+                <TextView
+                    android:id="@+id/textView_source_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/source_address"
+                    android:textColor="@color/my_orders_address_text_color"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_rest_name"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_rest_name" />
+
+                <View
+                    android:id="@+id/view_dotted_line"
+                    android:layout_width="20dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/back_ground_dotted"
+                    app:layout_constraintBottom_toTopOf="@+id/image_view_destination_loc"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView_source_loc"
+                    app:layout_constraintStart_toStartOf="@+id/imageView_source_loc"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView_source_loc" />
+
+                <ImageView
+                    android:id="@+id/image_view_destination_loc"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="80dp"
+                    android:src="@drawable/ic_location_gray"
+                    app:layout_constraintEnd_toEndOf="@+id/view_dotted_line"
+                    app:layout_constraintStart_toStartOf="@+id/view_dotted_line"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView_source_loc" />
+
+                <TextView
+                    android:id="@+id/textView_destination_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/destination_loc_address"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/my_orders_address_text_color"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_view_destination_loc"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/image_view_destination_loc"
+                    app:layout_constraintTop_toTopOf="@+id/image_view_destination_loc" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_reorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/back_ground_filter_page_button_apply"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:paddingStart="14sp"
+                    android:paddingTop="9dp"
+                    android:paddingEnd="14sp"
+                    android:paddingBottom="9dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/reorder"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:customFontThickness="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_destination_address" />
+
+                <View
+                    android:id="@+id/view_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:background="@color/colorWhite"
+                    android:visibility="@{isLast?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_reorder" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

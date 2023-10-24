@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.wacmob.foodhub.view.listener.OnAdapterSelectedListener" />
+
+        <variable
+            name="item"
+            type="com.wacmob.foodhub.data.models.SearchItemListModel" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorWhite"
+        android:onClick="@{()->listener.onAdapterSelected(item)}"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/view_new">
+
+            <View
+                android:id="@+id/view11"
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.wacmob.foodhub.view.customview.WacTextView
+                android:id="@+id/wac_text_view_item_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center_vertical"
+                android:text="@{item.productTitle}"
+                android:textColor="@color/search_item_text_color"
+                android:textSize="14sp"
+                app:customFontThickness="bold"
+                app:layout_constraintStart_toEndOf="@+id/image_view_search_item"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="biriyani" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_view_search_item"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/login_image"
+                app:layout_constraintBottom_toBottomOf="@+id/view11"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.wacmob.foodhub.view.customview.WacTextView
+                android:id="@+id/text_view_hotel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@{item.hotelName}"
+                android:textColor="@color/search_hotel_text_color"
+                android:textSize="10sp"
+                app:customFontThickness="bold"
+                app:layout_constraintStart_toStartOf="@+id/wac_text_view_item_name"
+                app:layout_constraintTop_toBottomOf="@+id/wac_text_view_item_name"
+                tools:text="mintzaa" />
+
+            <com.wacmob.foodhub.view.customview.WacTextView
+                android:id="@+id/wacTextView_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@{item.productRate}"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:customFontThickness="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/view11"
+                app:layout_constraintTop_toTopOf="@+id/view11" />
+
+            <ImageView
+                android:id="@+id/image_view_star1"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_star_red"
+                app:layout_constraintStart_toStartOf="@+id/text_view_hotel_name"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_hotel_name" />
+
+            <ImageView
+                android:id="@+id/image_view_star2"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star_red"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_star1"
+                app:layout_constraintEnd_toStartOf="@+id/image_view_star3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/image_view_star1"
+                app:layout_constraintTop_toTopOf="@+id/image_view_star1" />
+
+            <ImageView
+                android:id="@+id/image_view_star3"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star_red"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_star2"
+                app:layout_constraintEnd_toStartOf="@+id/image_view_star4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/image_view_star2"
+                app:layout_constraintTop_toTopOf="@+id/image_view_star2" />
+
+            <ImageView
+                android:id="@+id/image_view_star4"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star_red"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_star3"
+                app:layout_constraintEnd_toStartOf="@+id/image_view_star5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/image_view_star3"
+                app:layout_constraintTop_toTopOf="@+id/image_view_star3" />
+
+            <ImageView
+                android:id="@+id/image_view_star5"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:src="@drawable/ic_star_red"
+                app:layout_constraintBottom_toBottomOf="@+id/image_view_star4"
+                app:layout_constraintStart_toEndOf="@+id/image_view_star4"
+                app:layout_constraintTop_toTopOf="@+id/image_view_star4" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

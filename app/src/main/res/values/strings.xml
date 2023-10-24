@@ -1,0 +1,189 @@
+<resources>
+    <string name="app_name">FoodHub</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--BOTTOM NAVIGATION HOME PAGE-->
+    <string name="splash_text">FoodHub</string>
+    <string name="fh">FH</string>
+
+    <string name="onBoard_screen_one_heading">Select Food Items</string>
+    <string name="onBoard_screen_two_heading">Enter Your Address</string>
+    <string name="onBoard_screen_three_heading">Where Should We Deliver?</string>
+    <string name="onBoard_screen_one_details">Choose from our array of mouth-watering options to satiate your cravings!</string>
+    <string name="onBoard_screen_two_details">Enter your home address to enjoy ramen at your comfort</string>
+    <string name="onBoard_screen_three_details">Choose pickup for a quick grab, or sit back and let us bring the warmth to you.</string>
+
+    <string name="text_log_in_heading">Welcome</string>
+    <string name="hint_login_number">Phone number</string>
+
+    <string name="otp_verification_text">OTP has been sent to you on your mobile phone</string>
+    <string name="number_showing_in_otp_page">7837847384</string>
+    <string name="otp_verify">VERIFY</string>
+
+    <string name="username_sign_up">Username</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="delivery_location">Delivery Location</string>
+    <string name="address">Address</string>
+
+
+    <string name="google_maps_key">AIzaSyDfakRuBftTvC9ws4GonleND5kDYAGs5ug</string>
+
+
+    <string name="search">Search</string>
+    <string name="hubs">Hubs</string>
+    <string name="foods">Foods</string>
+    <string name="profile">Profile</string>
+    <string name="notification">Notification</string>
+    <string name="offers">Offers</string>
+    <string name="near_me">Near Me</string>
+    <string name="cart">Cart</string>
+
+
+    <string name="most_popular">Most Popular</string>
+    <string name="free_delivery">Free Delivery</string>
+    <string name="burger">Burger</string>
+    <string name="rupees">$</string>
+    <string name="rate_first">100</string>
+    <string name="comma">,</string>
+    <string name="number_of_stars">4</string>
+    <string name="stars">stars</string>
+    <string name="chicken_biriyani">Chicken Biriyani</string>
+
+
+    <string name="hub_name">Drunken Panda</string>
+    <string name="rate_and_distance">0.3km, 5 stars</string>
+
+
+    <string name="detail_page_hub_name">Mintzza Food Mall</string>
+    <string name="item_rate_demo">56</string>
+    <string name="offer_percent_symbol">% off</string>
+    <string name="offer_percent">10</string>
+    <string name="quantity_food_detail">Quantity</string>
+    <string name="subtract">-</string>
+    <string name="add">+</string>
+
+
+    <string name="about_item">About Item</string>
+    <string name="about_item_details">Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</string>
+    <string name="related_foods">Related Foods</string>
+    <string name="koratty">Koratty</string>
+    <string name="rating">4.5</string>
+    <string name="delivery_time">30 min</string>
+    <string name="text_delivery_time">Delivery time</string>
+    <string name="distance_in_km">0.3</string>
+    <string name="text_km">KM</string>
+    <string name="hub_drunken_panda">Drunken Panda</string>
+
+
+    <string name="offerName">FIRST50 offer</string>
+    <string name="offer_validity">20 June 2019 - 30 December 2019</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="about_offer">About Offer</string>
+    <string name="copy">Copy</string>
+    <string name="valid_on">Valid on</string>
+    <string name="valid_time">Valid Time</string>
+    <string name="support_os">ANDROID, IOS</string>
+    <string name="copy_code_and_order_food">Copy Code and Order Food</string>
+
+
+    <string name="person_name">CSDS493</string>
+    <string name="cart_person_address">10900 Euclid Ave, Cleveland, OH  - 44106</string>
+    <string name="mobile_number_person">9656757030</string>
+    <string name="change_address">Change Address</string>
+    <string name="no_item_sign">No items in your cart order now</string>
+    <string name="cart_heading">My Cart</string>
+    <string name="total_amount_cart">₹184</string>
+    <string name="items_amount_cart">168</string>
+    <string name="delivery_charge">20</string>
+    <string name="price_details">Price Details</string>
+    <string name="price_number_items">Price (3 items)</string>
+    <string name="delivery">Delivery</string>
+    <string name="price_total">Price Total</string>
+
+
+    <string name="max">500</string>
+    <string name="min">0</string>
+    <string name="text_rating">RATING</string>
+    <string name="rating_one">1</string>
+    <string name="rating_two">2</string>
+    <string name="rating_three">3</string>
+    <string name="rating_four">4</string>
+    <string name="rating_five">5</string>
+    <string name="reset">RESET</string>
+    <string name="apply">APPLY</string>
+
+
+    <string name="label_near_me">Near Me</string>
+    <string name="label_offers">Offers</string>
+    <string name="label_cart">Cart</string>
+    <string name="label_notification">Notification</string>
+    <string name="label_profile">Profile</string>
+    <string name="label_full_name">Full Name</string>
+    <string name="label_re_password">Re enter password</string>
+    <string name="label_phone">Phone Number</string>
+    <string name="label_login">Login</string>
+    <string name="label_signup">Sign Up</string>
+    <string name="label_not_here">Not here? </string>
+    <string name="label_already_have">Already have an account? </string>
+    <string name="label_new_password">New Password</string>
+    <string name="label_confirm_password">Confirm Password</string>
+    <string name="label_forgot_password">Forgot Password</string>
+    <string name="label_forgot_password_q">Forgot Password?</string>
+    <string name="label_reset_password">Reset Password</string>
+    <string name="label_send">Send</string>
+    <string name="textview">GET STARTED</string>
+    <string name="label_email">Email</string>
+    <string name="label_password">Password</string>
+    <string name="add_to_cart">ADD TO CART </string>
+    <string name="remove_from_cart">REMOVE FROM CART</string>
+    <string name="order_now">ORDER NOW</string>
+    <string name="checkout">CHECK OUT</string>
+    <string name="rate_zero">₹0.00</string>
+    <string name="rate">56</string>
+    <string name="about_us">About Us</string>
+    <string name="rate_app">Rate App</string>
+    <string name="share_app">Share App</string>
+    <string name="logout">Logout</string>
+    <string name="title_activity_filter">FilterActivity</string>
+    <string name="notifications">Notifications</string>
+    <string name="notification_subject">Chicken biriyani is on it\'s way to being made. Track the route</string>
+    <string name="source_address">Vazhapilly towers, Koratty, Kerala 680309</string>
+    <string name="destination_loc_address">Webandcrafts, Infopark, Thrissur, Nalukettu Road, Koratty - 680308</string>
+    <string name="about_us_details">Welcome to Alpha Ramen APP!As passionate lovers of Japanese street food, we are excited to share authentic and vibrant flavors straight from the heart of Japan. Our menu stars traditional ramen, full-flavored Japanese BBQ, innovative animated food, and a wide array of other street food delights.Every dish at Alpha Ramen is carefully crafted, blending fresh ingredients and time-honored techniques. Follow our page to stay updated with our mouthwatering offerings, special events, and exclusive deals. And do not forget to tag us in your delicious experiences at Alpha Ramen! Lets embark on this flavorful adventure together.</string>
+    <string name="address_list_heading">Choose one devilery address</string>
+    <string name="add_new_address_heading">Add New Address</string>
+    <string name="full_name">Full Name</string>
+    <string name="house_name_no">House Name/No</string>
+    <string name="street">Street</string>
+    <string name="city_town">City/Town</string>
+    <string name="landmark">Landmark</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="phone">Phone</string>
+    <string name="change_location">Change Location</string>
+    <string name="detect_my_location">Detect my location</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="filter">Filter</string>
+    <string name="meal">MEAL</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="dishes">DISHES</string>
+    <string name="price">PRICE</string>
+    <string name="my_orders">My Orders</string>
+    <string name="reorder">REORDER</string>
+    <string name="estimated_time">Estimated Time</string>
+    <string name="estimated_time_dummy">10 minutes</string>
+    <string name="my_address">My Address</string>
+    <string name="recent_searches">Recent Searches</string>
+    <string name="order_placed">Order Placed</string>
+    <string name="text_order_placed_confirmation">Your order has been placed and is on it\'s way to being made.</string>
+    <string name="track_item">Track item</string>
+    <string name="payment_processing">Payment processing</string>
+    <string name="payment_success">Payment Success</string>
+
+
+</resources>

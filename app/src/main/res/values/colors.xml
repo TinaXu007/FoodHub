@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#DB1818</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#DB1818</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorGrey">#595858</color>
+
+    <color name="onBoard_dot_indicator_unselected">#40DB1818</color>
+    <color name="onBoard_detail_text_color">#8A8A8A</color>
+
+    <color name="otp_verification_text_color">#8A8A8A</color>
+
+    <color name="sign_up_fields_hint_color">#979797</color>
+
+    <color name="unselected_bottom_nav_color">#C7C7C7</color>
+
+    <color name="heading_color_food_list_fragment">#181818</color>
+    <color name="eighty_percent_white">#8CFFFFFF</color>
+    <color name="fifty_percent_black">#CC000000</color>
+    <color name="black_shadow">#33000000</color>
+
+    <color name="selected_view_color">#CCDB1818</color>
+    <color name="unselected_view_color">#000000</color>
+
+    <color name="food_detail_page_text_color">#433E3E</color>
+    <color name="food_detail_text_color_gray">#C7C7C7</color>
+    <color name="food_detail_page_about_text_color">#181818</color>
+    <color name="about_details_text_color">#9D9999</color>
+
+
+    <color name="offers_fragment_heading_color">#181818</color>
+    <color name="offers_fragment_offer_color">#433E3E</color>
+    <color name="offers_fragment_offer_validity_color">#C7C7C7</color>
+    <color name="offer_detail_sub_headings_color">#433E3E</color>
+    <color name="offer_support_os_color">#9D9999</color>
+
+
+    <color name="cart_person_name_color">#433E3E</color>
+    <color name="cart_person_address_color">#C7C7C7</color>
+    <color name="cart_person_number_color">#303030</color>
+    <color name="cart_no_item_color">#9D9999</color>
+    <color name="cart_heading_color">#181818</color>
+    <color name="cart_total_price_color">#433E3E</color>
+    <color name="cart_text_number_of_items_color">#858585</color>
+    <color name="cart_item_gray_color">#858585</color>
+
+
+    <color name="notification_heading_color">#181818</color>
+    <color name="notification_subject_color">#433E3E</color>
+    <color name="source_hub_text_color">#303030</color>
+    <color name="notification_address_text_color">#C7C7C7</color>
+
+
+    <color name="profile_text_color">#181818</color>
+    <color name="profile_sub_text_color">#433E3E</color>
+
+
+    <color name="about_us_heading_text_color">#181818</color>
+    <color name="about_us_subject_text_color">#433E3E</color>
+
+
+    <color name="address_list_text_color">#181818</color>
+    <color name="address_detail_text_color">#433E3E</color>
+    <color name="change_address_text_color">#181818</color>
+    <color name="change_address_fields_text_color">#979797</color>
+
+
+    <color name="change_location_heading_text_color">#181818</color>
+
+
+    <color name="edit_profile_heading_text_color">#181818</color>
+    <color name="edit_profile_fields_text_color">#979797</color>
+
+
+    <color name="filter_heading_text_color">#181818</color>
+    <color name="filter_check_box_text_color">#303030</color>
+    <color name="textColorWhite">#FFFFFF</color>
+    <color name="textColorBlack">#000000</color>
+    <color name="textColorGrey">#595858</color>
+
+
+    <color name="my_orders_heading_text_color">#181818</color>
+    <color name="my_orders_item_text_color">#433E3E</color>
+    <color name="my_orders_hub_text_color">#C7C7C7</color>
+    <color name="my_orders_hub_name_text_color">#303030</color>
+    <color name="my_orders_address_text_color">#C7C7C7</color>
+
+
+    <color name="track_item_head_text_color">#433E3E</color>
+    <color name="track_item_hub_name_text_color">#C7C7C7</color>
+    <color name="phone_text_color_green">#0CEB16</color>
+    <color name="text_my_address_color">#433E3E</color>
+
+
+    <color name="search_item_text_color">#433E3E</color>
+    <color name="search_hotel_text_color">#C7C7C7</color>
+
+
+    <color name="order_placed_heading_text_color">#181818</color>
+    <color name="order_placed_confirmation_text_color">#433E3E</color>
+    <color name="payment_success_text_color">#18db78</color>
+
+
+    <color name="darkGrey">#767676</color>
+    <color name="black_effective">#2a2a2a</color>
+    <color name="project_red">#DB1818</color>
+    <color name="colorShadowBlack">#73000000</color>
+    <color name="colorShadowWhite">#CCFFFFFF</color>
+    <color name="switchTrackDisable">#CCDB1818</color>
+    <color name="switchTrackEnable">#DB1818</color>
+    <color name="switchTrackNormal">#595858</color>>
+    <color name="color_gray">#72C7D8C6</color>
+    <color name="red_seek">#80DB1818</color>
+    <color name="seek_bar_gray">#C7C7C7</color>
+    <color name="shimmerGrey">#C7C7C7</color>
+    <color name="colorRouteLine">#DB1818</color>
+
+
+    <color name="selected_switch_color">#DB1818</color>
+    <color name="unselected_switch_color">#ffffff</color>
+    <color name="selected_bottom_nav_color">#DB1818</color>
+    <color name="color_blue">#303F9F</color>
+    <color name="color_green">#379F30</color>
+    <color name="color_pink">#C2185B</color>
+
+    <color name="color_ripple">#80FFFFFF</color>
+
+
+
+</resources>

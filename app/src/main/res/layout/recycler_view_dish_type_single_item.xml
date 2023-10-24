@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="listener"
+            type="com.wacmob.foodhub.view.listener.OnAdapterSelectedListener" />
+
+        <variable
+            name="isLast"
+            type="Boolean" />
+
+        <variable
+            name="item"
+            type="com.wacmob.foodhub.data.models.DishTypeModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
+        >
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            android:visibility="@{isLast?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@+id/card_view_item"
+            app:layout_constraintStart_toEndOf="@+id/card_view_item"
+            app:layout_constraintTop_toTopOf="@+id/card_view_item" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_item"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="@{()->listener.onAdapterSelected(item)}"
+            app:cardCornerRadius="8dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@{item.selected?@color/project_red:@color/colorWhite}"
+                android:paddingStart="21dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="21dp"
+                android:paddingBottom="6dp"
+                android:text="@{item.dishType}"
+                android:textColor="@{item.selected?@color/colorWhite:@color/project_red}"
+                android:textStyle="bold" />
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.wacmob.foodhub.view.listener.AddressSelectListener" />
+
+        <variable
+            name="item"
+            type="com.wacmob.foodhub.data.models.AddressListModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="5dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_person_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="5dp"
+                    android:text="@{item.name}"
+                    android:textColor="@color/colorBlack"
+                    app:customFontThickness="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="@string/person_name" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="150dp"
+                    android:text="@{item.houseName+`,`+item.street+`,`+item.landmark+`,`+item.city+`,`+item.pincode}"
+                    android:textColor="@color/address_detail_text_color"
+                    android:textSize="12sp"
+                    app:customFontThickness="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_person_name"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_person_name" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@{item.phone}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:customFontThickness="bold"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_address"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_address"
+                    tools:text="9965487565" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/back_ground_cancelled_red"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:onClick="@{()->listener.AddressSelect(item,`select`)}"
+                    android:paddingStart="10dp"
+                    android:paddingTop="6dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="6dp"
+                    android:text="Select"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:customFontThickness="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_phone_number" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:id="@+id/imageView_edit"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/circular_background_login"
+            android:elevation="6dp"
+            android:onClick="@{()->listener.AddressEdit(item,`edit`)}"
+            android:padding="10dp"
+            android:src="@drawable/ic_mode_edit_white"
+            app:layout_constraintBottom_toBottomOf="@+id/card_view_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/card_view_address" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

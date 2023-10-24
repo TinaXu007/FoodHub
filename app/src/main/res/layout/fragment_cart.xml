@@ -1,0 +1,403 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="empty"
+            type="Integer" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="cart"
+            type="com.wacmob.foodhub.viewmodel.CartViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        tools:context="com.wacmob.foodhub.view.ui.cart.CartFragment">
+
+        <ImageView
+            android:id="@+id/lottie_animation_view"
+            android:layout_width="300dp"
+            android:layout_height="150dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="100dp"
+            android:src="@drawable/cart_empty_one"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/card_view_order_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_separator">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:paddingTop="10dp"
+                    android:layout_marginTop="10dp"
+                    android:elevation="6dp"
+                    android:background="@color/colorWhite"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.wacmob.foodhub.view.customview.WacTextView
+                            android:id="@+id/text_view_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/person_name"
+                            android:textColor="@color/cart_person_name_color"
+                            app:customFontThickness="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <com.wacmob.foodhub.view.customview.WacTextView
+                            android:id="@+id/text_view_address"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/cart_person_address"
+                            android:textColor="@color/cart_person_address_color"
+                            android:textSize="12sp"
+                            app:customFontThickness="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/text_view_name"
+                            app:layout_constraintTop_toBottomOf="@+id/text_view_name" />
+
+                        <com.wacmob.foodhub.view.customview.WacTextView
+                            android:id="@+id/text_view_phone_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="@string/mobile_number_person"
+                            android:textColor="@color/cart_person_number_color"
+                            android:textSize="12sp"
+                            app:customFontThickness="bold"
+                            app:layout_constraintStart_toStartOf="@+id/text_view_address"
+                            app:layout_constraintTop_toBottomOf="@+id/text_view_address" />
+
+                        <com.wacmob.foodhub.view.customview.WacTextView
+                            android:id="@+id/text_view_change_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/back_ground_change_address"
+                            android:fontFamily="@font/roboto_medium"
+                            android:gravity="center"
+                            android:onClick="@{listener::onClick}"
+                            android:paddingStart="14sp"
+                            android:paddingTop="9dp"
+                            android:paddingEnd="14sp"
+                            android:paddingBottom="9dp"
+                            android:text="@string/change_address"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:customFontThickness="bold"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/text_view_phone_number" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_cart_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:overScrollMode="never"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/card_view_address" />
+
+                <TextView
+                    android:id="@+id/text_view_continue_shopping"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginEnd="100dp"
+                    android:background="@drawable/back_ground_cancelled_red"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:onClick="@{listener::onClick}"
+                    android:paddingStart="14sp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="14sp"
+                    android:paddingBottom="10dp"
+                    android:text="@string/order_now"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_view_no_items"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:text="@string/no_item_sign"
+                    android:textColor="@color/cart_no_item_color"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toTopOf="@+id/text_view_continue_shopping"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.wacmob.foodhub.view.customview.WacTextView
+            android:id="@+id/text_view_cart_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cart_heading"
+            android:textColor="@color/cart_heading_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:customFontThickness="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_prev_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView_prev_arrow" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="60dp" />
+
+        <ImageView
+            android:id="@+id/imageView_prev_arrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/circular_background_login"
+            android:onClick="@{listener::onClick}"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_white_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_rate"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@color/colorWhite"
+            android:elevation="6dp"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="0dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            tools:text="@string/total_amount_cart"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_checkout"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.wacmob.foodhub.view.customview.WacTextView
+            android:id="@+id/text_view_checkout"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:background="@color/colorAccent"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:onClick="@{listener::onClick}"
+            android:text="@string/checkout"
+            android:textColor="@color/colorWhite"
+            app:customFontThickness="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_rate" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_order_details"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp"
+            app:layout_constraintBottom_toTopOf="@+id/text_view_checkout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout_price_details"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/text_view_price_of_items"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_view_item_price"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_item_price"
+                    tools:text="@string/items_amount_cart" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/rupees"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_view_price_of_items"
+                    app:layout_constraintEnd_toStartOf="@+id/text_view_price_of_items"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_price_of_items"
+                    tools:text="@string/rupees" />
+
+                <TextView
+                    android:id="@+id/text_view_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/delivery_charge"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_view_delivery_charge"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_delivery_charge"
+                    tools:text="20" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="@string/rupees"
+                    app:layout_constraintBottom_toBottomOf="@+id/text_view_delivery"
+                    app:layout_constraintEnd_toStartOf="@+id/text_view_delivery"
+                    app:layout_constraintTop_toTopOf="@+id/text_view_delivery"
+                    tools:text="@string/rupees" />
+
+                <TextView
+                    android:id="@+id/text_view_final_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="@color/cart_total_price_color"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/wacText_view_total"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/wacText_view_total"
+                    tools:text="@string/total_amount_cart" />
+
+                <!-- <TextView
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_marginEnd="5dp"
+                     android:text="@string/rupees"
+                     app:layout_constraintBottom_toBottomOf="@+id/text_view_final_amount"
+                     app:layout_constraintEnd_toStartOf="@+id/text_view_final_amount"
+                     app:layout_constraintTop_toTopOf="@+id/text_view_final_amount"
+                     tools:text="@string/rupees" />-->
+
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_price_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/price_details"
+                    android:textColor="@color/cart_person_name_color"
+                    app:customFontThickness="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_item_price"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/price_number_items"
+                    android:textColor="@color/cart_text_number_of_items_color"
+                    android:textSize="12sp"
+                    app:customFontThickness="bold"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_price_details"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_price_details" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/text_view_delivery_charge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/delivery"
+                    android:textColor="@color/cart_text_number_of_items_color"
+                    android:textSize="12sp"
+                    app:customFontThickness="bold"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_item_price"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_item_price" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/wacText_view_total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/price_total"
+                    android:textColor="@color/cart_total_price_color"
+                    app:customFontThickness="bold"
+                    app:layout_constraintStart_toStartOf="@+id/text_view_delivery_charge"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_delivery_charge" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+
+

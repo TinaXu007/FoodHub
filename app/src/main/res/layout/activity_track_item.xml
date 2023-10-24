@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="trackItem"
+            type="com.wacmob.foodhub.viewmodel.TrackItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.ui.track_item.TrackItemActivity">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+
+
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorWhite"
+            app:cardCornerRadius="12dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline_separator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".68" />
+
+
+                <TextView
+                    android:id="@+id/textView_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="11dp"
+                    android:text="@string/chicken_biriyani"
+                    android:textColor="@color/track_item_head_text_color"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.wacmob.foodhub.view.customview.WacTextView
+                    android:id="@+id/wac_text_view_hotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/hub_name"
+                    android:textColor="@color/track_item_hub_name_text_color"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView_item_name"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_item_name" />
+
+                <View
+                    android:id="@+id/view_estimated_time"
+                    android:layout_width="130dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_ground_filter_page_button_apply"
+                    android:onClick="@{listener::onClick}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/wac_text_view_hotel" />
+
+                <TextView
+                    android:id="@+id/text_estimated_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/estimated_time"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/view_estimated_time"
+                    app:layout_constraintHorizontal_bias="0.469"
+                    app:layout_constraintStart_toStartOf="@+id/view_estimated_time"
+                    app:layout_constraintTop_toTopOf="@+id/view_estimated_time" />
+
+                <TextView
+                    android:id="@+id/text_view_estimated_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/estimated_time_dummy"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/view_estimated_time"
+                    app:layout_constraintStart_toStartOf="@+id/view_estimated_time"
+                    app:layout_constraintTop_toBottomOf="@+id/text_estimated_time" />
+
+                <ImageView
+                    android:id="@+id/imageView_call"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/background_circle_call"
+                    android:padding="8dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_local_phone_white"
+                    android:onClick="@{listener::onClick}"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_separator"
+                    app:layout_constraintStart_toEndOf="@+id/view_estimated_time"
+                    app:layout_constraintTop_toTopOf="@+id/view_estimated_time" />
+
+                <ImageView
+                    android:id="@+id/imageView_route"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/circular_background_login"
+                    android:onClick="@{listener::onClick}"
+                    android:padding="8dp"
+                    android:src="@drawable/loc_to_loc"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline_separator"
+                    app:layout_constraintStart_toEndOf="@+id/view_estimated_time"
+                    app:layout_constraintTop_toTopOf="@+id/textView_my_address" />
+
+                <TextView
+                    android:id="@+id/textView_my_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="15dp"
+                    android:text="@string/my_address"
+                    android:textColor="@color/text_my_address_color"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_view_estimated_time" />
+
+                <TextView
+                    android:id="@+id/textView_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="15dp"
+                    android:text="@string/destination_loc_address"
+                    android:textColor="@color/my_orders_address_text_color"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView_route"
+                    app:layout_constraintStart_toStartOf="@+id/textView_my_address"
+                    app:layout_constraintTop_toBottomOf="@+id/textView_my_address" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/image_view_cart_item"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginEnd="17dp"
+            android:elevation="6dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/login_image"
+            app:layout_constraintStart_toStartOf="@+id/guideline_separator_main"
+            app:layout_constraintBottom_toBottomOf="@+id/card_view_address"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/card_view_address"
+            app:riv_corner_radius="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_separator_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".61" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

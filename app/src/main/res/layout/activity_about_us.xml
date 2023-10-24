@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="aboutUs"
+            type="com.wacmob.foodhub.viewmodel.AboutUsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.wacmob.foodhub.view.ui.about_us.AboutUsActivity">
+
+        <ImageView
+            android:id="@+id/imageView_prev_arrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/circular_background_login"
+            android:onClick="@{listener::onClick}"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_white_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.wacmob.foodhub.view.customview.WacTextView
+            android:id="@+id/text_view_about_us_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:textColor="@color/about_us_heading_text_color"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView_prev_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView_prev_arrow"
+            app:customFontThickness="bold" />
+
+        <com.wacmob.foodhub.view.customview.WacTextView
+            android:id="@+id/text_view_about_details"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="20dp"
+            android:paddingTop="20dp"
+            android:lineSpacingExtra="8dp"
+            android:text="@string/about_us_details"
+            android:textAlignment="center"
+            android:textColor="@color/about_us_subject_text_color"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView_prev_arrow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

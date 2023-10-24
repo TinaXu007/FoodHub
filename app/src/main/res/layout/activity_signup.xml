@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.wacmob.foodhub.view.customview.WacEditText" />
+        <import type="com.wacmob.foodhub.view.customview.WacTextView" />
+
+        <variable
+            name="signUp"
+            type="com.wacmob.foodhub.viewmodel.SignupViewModel" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.wacmob.foodhub.view.ui.signup.SignupActivity">
+
+        <ImageView
+            android:id="@+id/image_view_sign_up_background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/login_image"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="100dp">
+
+                <View
+                    android:id="@+id/view_sign_up_back_ground"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="20dp"
+                    android:alpha="0.8"
+                    android:background="@color/colorWhite"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/image_view_sign_Up_head"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/circular_background_login"
+                    android:padding="8dp"
+                    android:src="@drawable/food_hub_icon"
+                    app:layout_constraintBottom_toTopOf="@+id/view_sign_up_back_ground"
+                    app:layout_constraintEnd_toEndOf="@+id/view_sign_up_back_ground"
+                    app:layout_constraintStart_toStartOf="@+id/view_sign_up_back_ground"
+                    app:layout_constraintTop_toTopOf="@+id/view_sign_up_back_ground" />
+
+                <EditText
+                    android:id="@+id/edit_text_user_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/circular_background"
+                    android:hint="@string/username_sign_up"
+                    android:inputType="textCapWords"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/view_sign_up_back_ground"
+                    app:layout_constraintStart_toStartOf="@+id/view_sign_up_back_ground"
+                   app:layout_constraintTop_toBottomOf="@+id/image_view_sign_Up_head"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <EditText
+                    android:id="@+id/edit_text_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="58dp"
+                    android:background="@drawable/circular_background"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_user_name" />
+
+                <EditText
+                    android:id="@+id/edit_text_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="58dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:background="@drawable/circular_background"
+                    android:hint="@string/phone_number"
+                    android:inputType="number"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp"
+                    android:maxLength="14"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="58dp"
+                    android:background="@drawable/circular_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_phone" >
+
+                    <TextView
+                        android:id="@+id/edit_text_location"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/circular_background"
+                        android:hint="@string/delivery_location"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:paddingTop="12dp"
+                        android:paddingBottom="12dp"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/image_view_locate"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                       />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/lottie_animation_view_load_place"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/constraintLayout_location"
+                        app:layout_constraintTop_toTopOf="@+id/constraintLayout_location"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:lottie_autoPlay="true"
+                        app:lottie_fileName="loc_finder.json"
+                        app:lottie_loop="true" />
+
+                    <ImageView
+                        android:id="@+id/image_view_locate"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_locate"
+                        android:padding="2dp"
+                        android:clickable="true"
+                        android:onClick="@{listener::onClick}"
+                        app:layout_constraintTop_toTopOf="@+id/constraintLayout_location"
+                        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout_location"
+                        app:layout_constraintEnd_toEndOf="@+id/constraintLayout_location" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <EditText
+                    android:id="@+id/edit_text_house_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="58dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/circular_background"
+                    android:hint="@string/house_name_no"
+                    android:inputType="textCapWords"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_location" />
+
+                <EditText
+                    android:id="@+id/edit_text_city"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:layout_marginEnd="58dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/circular_background"
+                    android:hint="@string/city_town"
+                    android:inputType="textCapWords"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_house_name" />
+
+                <EditText
+                    android:id="@+id/edit_text_pinCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="58dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="58dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/circular_background"
+                    android:hint="@string/pin_code"
+                    android:inputType="number"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:maxLength="10"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_city" />
+
+                <ImageView
+                    android:id="@+id/imageView_next_arrow"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginBottom="23dp"
+                    android:background="@drawable/ripple"
+                    android:backgroundTint="@color/colorAccent"
+                    android:onClick="@{listener::onClick}"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_arrow_right"
+                    app:layout_constraintBottom_toBottomOf="@+id/view_sign_up_back_ground"
+                    app:layout_constraintEnd_toEndOf="@+id/view_sign_up_back_ground"
+                    app:layout_constraintTop_toBottomOf="@+id/edit_text_pinCode" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

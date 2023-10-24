@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/near_me"
+        android:enabled="true"
+        android:icon="@drawable/location"
+        android:title="@string/label_near_me"
+        app:showAsAction="withText" />
+    <item
+        android:id="@+id/offers"
+        android:enabled="true"
+        android:icon="@drawable/percentage"
+        android:title="@string/label_offers"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/cart"
+        android:enabled="true"
+        android:icon="@drawable/shopping_cart"
+        android:title="@string/label_cart"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/notification"
+        android:enabled="true"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/label_notification"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/man_user"
+        android:title="@string/label_profile"
+        app:showAsAction="ifRoom" />
+</menu>

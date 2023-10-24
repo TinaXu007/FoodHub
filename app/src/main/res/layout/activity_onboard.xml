@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+   >
+    <data>
+        <variable
+            name="onboard"
+            type="com.wacmob.foodhub.viewmodel.OnboardViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="false"
+        android:background="@color/colorWhite"
+        tools:context="com.wacmob.foodhub.view.ui.onboarding.OnboardActivity">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_separator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".85" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/onBoard_viewpager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_separator"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView_prev_arrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="29dp"
+            android:background="@drawable/circular_background_login"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_arrow_white_black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_separator" />
+
+        <ImageView
+            android:id="@+id/imageView_next_arrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="29dp"
+            android:background="@drawable/circular_background_login"
+            android:padding="8dp"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_separator" />
+
+        <ImageView
+            android:id="@+id/imageView_finish"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="29dp"
+            android:background="@drawable/circular_background_login"
+            android:padding="8dp"
+            android:visibility="gone"
+            android:src="@drawable/ic_finish_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_separator" />
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:foregroundGravity="center_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guideline_separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:piv_animationType="scale"
+            app:piv_dynamicCount="true"
+            app:piv_interactiveAnimation="true"
+            app:piv_padding="6dp"
+            app:piv_radius="4dp"
+            app:piv_selectedColor="@color/project_red"
+            app:piv_unselectedColor="@color/onBoard_dot_indicator_unselected"
+            app:piv_viewPager="@id/onBoard_viewpager" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="payment"
+            type="com.wacmob.foodhub.viewmodel.PaymentViewModel" />
+
+        <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context="com.wacmob.foodhub.view.ui.order_placed.OrderPlacedActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout_order_placed"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView_prev_arrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/circular_background_login"
+                android:onClick="@{listener::onClick}"
+                android:padding="8dp"
+                android:src="@drawable/ic_arrow_white_black"
+                app:layout_constraintBottom_toBottomOf="@+id/textView_order_placed_heading"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView_order_placed_heading" />
+
+            <TextView
+                android:id="@+id/textView_order_placed_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/order_placed"
+                android:textColor="@color/order_placed_heading_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_order_placed_heading">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:overScrollMode="never"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textView_order_placed_confirmation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/text_order_placed_confirmation"
+                        android:textAlignment="center"
+                        android:textColor="@color/order_placed_confirmation_text_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+
+                    <ImageView
+                        android:id="@+id/imageView_source_loc"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="41dp"
+                        android:layout_marginTop="44dp"
+                        android:src="@drawable/ic_location_gray"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView_order_placed_confirmation" />
+
+                    <TextView
+                        android:id="@+id/text_view_rest_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:text="@string/hub_name"
+                        android:textColor="@color/my_orders_hub_name_text_color"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/imageView_source_loc"
+                        app:layout_constraintTop_toTopOf="@+id/imageView_source_loc" />
+
+                    <TextView
+                        android:id="@+id/textView_source_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginEnd="40dp"
+                        android:text="@string/source_address"
+                        android:textColor="@color/my_orders_address_text_color"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/text_view_rest_name"
+                        app:layout_constraintTop_toBottomOf="@+id/text_view_rest_name" />
+
+                    <View
+                        android:id="@+id/view_dotted_line"
+                        android:layout_width="20dp"
+                        android:layout_height="0dp"
+                        android:background="@drawable/back_ground_dotted"
+                        app:layout_constraintBottom_toTopOf="@+id/image_view_destination_loc"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView_source_loc"
+                        app:layout_constraintStart_toStartOf="@+id/imageView_source_loc"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView_source_loc" />
+
+                    <ImageView
+                        android:id="@+id/image_view_destination_loc"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="80dp"
+                        android:src="@drawable/ic_location_gray"
+                        app:layout_constraintEnd_toEndOf="@+id/view_dotted_line"
+                        app:layout_constraintStart_toStartOf="@+id/view_dotted_line"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView_source_loc" />
+
+                    <TextView
+                        android:id="@+id/textView_destination_address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="40dp"
+                        android:text="@string/destination_loc_address"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/my_orders_address_text_color"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/image_view_destination_loc"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/image_view_destination_loc"
+                        app:layout_constraintTop_toTopOf="@+id/image_view_destination_loc" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <com.wacmob.foodhub.view.customview.WacTextView
+                android:id="@+id/text_view_track_item"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:text="@string/track_item"
+                android:onClick="@{listener::onClick}"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                app:customFontThickness="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_animation_view"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="100dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="credit_card_lottie_green.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/text_view_payment_processing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/payment_processing"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottie_animation_view" />
+
+        <TextView
+            android:id="@+id/text_view_success"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/payment_success"
+            android:textColor="@color/payment_success_text_color"
+            android:textSize="22sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
