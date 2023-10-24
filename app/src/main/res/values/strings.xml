@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">FoodHub</string>
+    <string name="app_name">Alpha Ramen</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--BOTTOM NAVIGATION HOME PAGE-->
-    <string name="splash_text">FoodHub</string>
+    <string name="splash_text">Alpha Ramen</string>
     <string name="fh">FH</string>
 
     <string name="onBoard_screen_one_heading">Select Food Items</string>
