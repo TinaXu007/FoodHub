@@ -64,8 +64,8 @@ public class ChangeAddressActivity extends BaseActivity<ActivityChangeAddressBin
 
             databinding.textViewChangeAddress.setText("Edit Address");
 
-            databinding.editTextFullName.setText(addressListModel.getName());
-            databinding.editTextFullName.setSelection(databinding.editTextFullName.getText().length());
+//            databinding.editTextFullName.setText(addressListModel.getName());
+//            databinding.editTextFullName.setSelection(databinding.editTextFullName.getText().length());
 
             databinding.editTextHouseName.setText(addressListModel.getHouseName());
             databinding.editTextHouseName.setSelection(databinding.editTextHouseName.getText().length());
@@ -93,7 +93,7 @@ public class ChangeAddressActivity extends BaseActivity<ActivityChangeAddressBin
     public void onClick(View v) {
         hideKeyboard();
         if (v == databinding.imageViewNextArrow) {
-            String name = databinding.editTextFullName.getText().toString();
+//            String name = databinding.editTextFullName.getText().toString();
             String houseName = databinding.editTextHouseName.getText().toString();
             String streetName = databinding.editTextStreet.getText().toString();
             String cityName = databinding.editTextCity.getText().toString();
@@ -109,7 +109,7 @@ public class ChangeAddressActivity extends BaseActivity<ActivityChangeAddressBin
                 } else {
 
                     Intent i = new Intent();
-                    i.putExtra("NAME", name);
+//                    i.putExtra("NAME", name);
                     i.putExtra("HOUSE_NAME", houseName);
                     i.putExtra("STREET_NAME", streetName);
                     i.putExtra("CITY_NAME", cityName);
