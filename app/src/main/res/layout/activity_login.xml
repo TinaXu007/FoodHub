@@ -122,16 +122,6 @@
                         android:background="@drawable/circular_background"
                         android:focusableInTouchMode="true">
 
-                        <com.rilixtech.CountryCodePicker
-                            android:id="@+id/ccp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            app:ccp_defaultNameCode="US"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
                         <EditText
                             android:id="@+id/editText_login"
                             android:layout_width="0dp"
@@ -148,7 +138,6 @@
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/ccp"
                             app:layout_constraintTop_toTopOf="parent" />
 
 
