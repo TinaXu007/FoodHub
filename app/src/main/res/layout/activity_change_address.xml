@@ -60,47 +60,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/text_view_full_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="@string/full_name"
-                    android:textColor="@color/change_address_fields_text_color"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toTopOf="@+id/card_view_full_name"
-                    app:layout_constraintStart_toStartOf="@+id/card_view_full_name" />
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view_full_name"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_marginStart="58dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="58dp"
-                    app:cardCornerRadius="10dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <EditText
-                        android:id="@+id/edit_text_full_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:background="@drawable/circular_background"
-                        android:hint="@string/full_name"
-                        android:inputType="textCapWords"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="0dp"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/circleImageView" />
-
-                </androidx.cardview.widget.CardView>
 
 
                 <TextView
