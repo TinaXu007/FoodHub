@@ -86,7 +86,8 @@ public class FoodItemListFragment extends BaseFragment<FragmentHomeBinding, Samp
         dataBinding.setSample(sampleModel);
 
 
-        handleProgressBar();
+//        handleProgressBar();
+        hideLoading(); // TODO: Tina added this
 
         if (getActivity() != null && getActivity() instanceof HomeActivity) {
 
@@ -111,24 +112,24 @@ public class FoodItemListFragment extends BaseFragment<FragmentHomeBinding, Samp
 
 
 
-        homeViewModel.getMutableLiveData().observe(this, itemResponseModel -> {
-
-
-            if (itemResponseModel != null && itemResponseModel.getData().getOfferList().size() > 0 &&
-                    itemResponseModel.getData().getPopularList().size() > 0) {
-
-                offerListModelList.addAll(itemResponseModel.getData().getOfferList());
-                mostPopularItemModelList.addAll(itemResponseModel.getData().getPopularList());
-
-
-            } else {
-                showToast("no response");
-            }
-
-            offerListAdapter.notifyDataSetChanged();
-            mostPopularItemAdapter.notifyDataSetChanged();
-
-        });
+//        homeViewModel.getMutableLiveData().observe(this, itemResponseModel -> {
+//
+//
+//            if (itemResponseModel != null && itemResponseModel.getData().getOfferList().size() > 0 &&
+//                    itemResponseModel.getData().getPopularList().size() > 0) {
+//
+//                offerListModelList.addAll(itemResponseModel.getData().getOfferList());
+//                mostPopularItemModelList.addAll(itemResponseModel.getData().getPopularList());
+//
+//
+//            } else {
+//                showToast("no response");
+//            }
+//
+//            offerListAdapter.notifyDataSetChanged();
+//            mostPopularItemAdapter.notifyDataSetChanged();
+//
+//        });
 
         homeViewModel.getFreeDeliveryMutableLiveData().observe(this, new Observer<FreeDeliveryResponseModel>() {
             @Override
