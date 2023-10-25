@@ -103,7 +103,7 @@ public class NotificationFragment extends BaseFragment<FragmentNotificationBindi
             //((HomeActivity) getActivity()).hideBottomBar();
             ((HomeActivity) getActivity()).loadNotificationFragment();
         }
-        populateData();
+//        populateData(); // TODO: Tina added this
 
         notificationItemAdapter = new NotificationItemAdapter(notificationItemModelList, adapterSelectedListener);
         dataBinding.recyclerViewNotificationList.setHasFixedSize(true);

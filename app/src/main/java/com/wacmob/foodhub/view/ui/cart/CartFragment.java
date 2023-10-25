@@ -108,6 +108,8 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
 
         //dataBinding.nestedScrollView.smoothScrollTo(0,0);
 
+        // TODO: Tina Start Remove
+        /*
         dataBinding.nestedScrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -115,14 +117,14 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                 if (scrollViewHeight > 0) {
                     dataBinding.nestedScrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
-/* //nested scroll view scroll to bottom
+*//* //nested scroll view scroll to bottom
                     final View lastView = dataBinding.nestedScrollView.getChildAt(dataBinding.nestedScrollView.getChildCount() - 1);
                     final int lastViewBottom = lastView.getBottom() + dataBinding.nestedScrollView.getPaddingBottom();
                     final int deltaScrollY = lastViewBottom - scrollViewHeight - dataBinding.nestedScrollView.getScrollY();
-                    *//* If you want to see the scroll animation, call this. *//*
+                    *//**//* If you want to see the scroll animation, call this. *//**//*
                     dataBinding.nestedScrollView.smoothScrollBy(0, deltaScrollY);
-                    *//* If you don't want, call this. *//*
-                    dataBinding.nestedScrollView.scrollBy(0, deltaScrollY);*/
+                    *//**//* If you don't want, call this. *//**//*
+                    dataBinding.nestedScrollView.scrollBy(0, deltaScrollY);*//*
 
                     //nested scroll view scroll to top
                     final View firstView = dataBinding.nestedScrollView.getChildAt(dataBinding.nestedScrollView.getChildCount() - 1);
@@ -146,7 +148,8 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                 LinearLayoutManager.VERTICAL, false));
         dataBinding.recyclerViewCartItems.setHasFixedSize(true);
         dataBinding.recyclerViewCartItems.setAdapter(cartItemAdapter);
-
+*/
+        // TODO: Tina End Remove
         if (getActivity() != null && getActivity() instanceof HomeActivity) {
 
             ((HomeActivity) getActivity()).hideBottomBar();
@@ -172,13 +175,15 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
     }
 
     private void priceCalculation(int size, float Amount) {
-
-
+        // TODO: Tina Start Remove
+        /*
         dataBinding.textViewPriceOfItems.setText(String.valueOf(Amount));
         deliveryCharge = Float.valueOf(dataBinding.textViewDelivery.getText().toString());
         dataBinding.textViewFinalAmount.setText(String.valueOf(deliveryCharge + totalAmount));
         dataBinding.textViewItemPrice.setText("Price (" + size + " items)");
         dataBinding.textViewRate.setText(String.valueOf(deliveryCharge + totalAmount));
+        */
+        // TODO: Tina End Remove
     }
 
     CartItemQuantityChangeListener cartItemQuantityChangeListener = new CartItemQuantityChangeListener() {
@@ -249,6 +254,8 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                     }
                     if (cartItemModels.size() == 0) {
                         // dataBinding.setEmpty(0);
+                        // TODO: Tina Start Remove
+                        /*
                         dataBinding.textViewRate.setVisibility(View.GONE);
                         dataBinding.textViewCheckout.setVisibility(View.GONE);
                         dataBinding.lottieAnimationView.setVisibility(View.VISIBLE);
@@ -257,6 +264,8 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                         dataBinding.textViewContinueShopping.setVisibility(View.VISIBLE);
                         dataBinding.textViewNoItems.setVisibility(View.VISIBLE);
                         dataBinding.recyclerViewCartItems.setVisibility(View.GONE);
+                        */
+                        // TODO: Tina End Remove
                         if (getActivity() != null && getActivity() instanceof HomeActivity) {
 
                             ((HomeActivity) getActivity()).showBottomBar();
@@ -326,7 +335,10 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                 ((HomeActivity) getActivity()).onBackPressed();
 
             }
-        } else if (v == dataBinding.textViewContinueShopping) {
+        }
+        // TODO: Tina Start Remove
+        /*
+        else if (v == dataBinding.textViewContinueShopping) {
             if (getActivity() != null && getActivity() instanceof HomeActivity) {
 
                 ((HomeActivity) getActivity()).onBackPressed();
@@ -357,13 +369,15 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
             }
 
         }
-
+        */
+        // TODO: Tina End Remove
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
+        // TODO: Tina Start Remove
+        /*
         dataBinding.nestedScrollView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
@@ -371,13 +385,13 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                 if (scrollViewHeight > 0) {
                     dataBinding.nestedScrollView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
 
-                    /*final View lastView = dataBinding.nestedScrollView.getChildAt(dataBinding.nestedScrollView.getChildCount() - 1);
+                    *//*final View lastView = dataBinding.nestedScrollView.getChildAt(dataBinding.nestedScrollView.getChildCount() - 1);
                     final int lastViewBottom = lastView.getBottom() + dataBinding.nestedScrollView.getPaddingBottom();
                     final int deltaScrollY = lastViewBottom - scrollViewHeight - dataBinding.nestedScrollView.getScrollY();
-                    *//* If you want to see the scroll animation, call this. *//*
+                    *//**//* If you want to see the scroll animation, call this. *//**//*
                     dataBinding.nestedScrollView.smoothScrollBy(0, deltaScrollY);
-                    *//* If you don't want, call this. *//*
-                    dataBinding.nestedScrollView.scrollBy(0, deltaScrollY);*/
+                    *//**//* If you don't want, call this. *//**//*
+                    dataBinding.nestedScrollView.scrollBy(0, deltaScrollY);*//*
                     final View firstView = dataBinding.nestedScrollView.getChildAt(dataBinding.nestedScrollView.getChildCount() - 1);
                     final int lastViewTop = firstView.getTop() + dataBinding.nestedScrollView.getPaddingTop();
                     final int deltaScrollY = lastViewTop - scrollViewHeight - dataBinding.nestedScrollView.getScrollY();
@@ -386,17 +400,21 @@ public class CartFragment extends BaseFragment<FragmentCartBinding, CartViewMode
                 }
             }
         });
+        */
+        // TODO: Tina End Remove
+
         if (requestCode == 100) {
 
             if (data != null && data.getExtras() != null) {
-
-
+                // TODO: Tina Start Remove
+                /*
                 AddressListModel addressListModel = data.getParcelableExtra("AddressSelectModel");
                 dataBinding.textViewName.setText(addressListModel.getName());
                 dataBinding.textViewAddress.setText(addressListModel.getHouseName() + "," + addressListModel.getLandmark()
                         + "" + addressListModel.getStreet() + "," + addressListModel.getCity() + "," + addressListModel.getPincode());
                 dataBinding.textViewPhoneNumber.setText(addressListModel.getPhone());
-
+                */
+                // TODO: Tina End Remove
             }
 
             }
