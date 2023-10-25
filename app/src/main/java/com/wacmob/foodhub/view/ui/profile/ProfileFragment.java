@@ -181,17 +181,17 @@ public class ProfileFragment extends BaseFragment<FragmentProfileBinding, Profil
             }
 
         } else if (v == dataBinding.imageViewOrders) {
-            if (getActivity() != null) {
-                dataBinding.imageViewOrders.setClickable(false);
-                startActivity(MyOrdersActivity.newIntent(getActivity()));
-                getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        dataBinding.imageViewOrders.setClickable(true);
-                    }
-                }, 1000);
-            }
+//            if (getActivity() != null) {
+//                dataBinding.imageViewOrders.setClickable(false);
+//                startActivity(MyOrdersActivity.newIntent(getActivity()));
+//                getActivity().overridePendingTransition(R.anim.enter_from_right, R.anim.exit_to_left);
+//                new Handler().postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        dataBinding.imageViewOrders.setClickable(true);
+//                    }
+//                }, 1000);
+//            }
 
         } else if (v == dataBinding.textViewRateApp) {
 
